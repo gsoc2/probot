@@ -18,7 +18,7 @@ describe("run", () => {
       PRIVATE_KEY_PATH: path.join(
         __dirname,
         "fixtures",
-        "test-private-key.pem"
+        "test-private-key.pem",
       ),
       WEBHOOK_PROXY_URL: "https://smee.io/EfHXC9BFfGAxbM6J",
       WEBHOOK_SECRET: "secret",
@@ -34,7 +34,7 @@ describe("run", () => {
         () => {
           initialized = true;
         },
-        { env }
+        { env },
       );
       expect(initialized).toBeTruthy();
       await server.stop();
@@ -61,7 +61,7 @@ describe("run", () => {
           (app: Probot) => {
             initialized = true;
           },
-          { env }
+          { env },
         );
         expect(initialized).toBeFalsy();
         await server.stop();
@@ -78,7 +78,7 @@ describe("run", () => {
           (app) => {
             app.log.fatal("test");
           },
-          { env }
+          { env },
         );
         await server.stop();
       });

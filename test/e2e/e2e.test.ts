@@ -52,7 +52,7 @@ describe("end-to-end-tests", () => {
       .mockImplementationOnce((req, res) => {
         expect(req.method).toEqual("POST");
         expect(req.path).toEqual(
-          "/repos/octocat/hello-world/issues/1/comments"
+          "/repos/octocat/hello-world/issues/1/comments",
         );
         expect(req.body).toStrictEqual({ body: "Hello World!" });
 
@@ -78,7 +78,7 @@ describe("end-to-end-tests", () => {
           GHE_PROTOCOL: "http",
           LOG_LEVEL: "trace",
         },
-      }
+      },
     );
 
     // give probot a moment to start
